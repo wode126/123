@@ -621,7 +621,7 @@
         
         // 生成请购单号 - 修正格式
         function generateOrderNumber(company, department, category, year, month, day) {
-            // 获取当月已有的请购单数量
+            // 获取当月已有的请购单数量，不考虑申请人
             const currentMonth = `${year}-${month.toString().padStart(2, '0')}`;
             const currentMonthOrders = purchaseOrders.filter(order => 
                 order.date.startsWith(currentMonth) && 
